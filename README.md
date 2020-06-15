@@ -1,24 +1,83 @@
-# function-component
+# VueJs-functional
 
-## Project setup
-```
-npm install
-```
+## 작성 진행중...
 
-### Compiles and hot-reloads for development
 ```
-npm run serve
-```
+최근에 Javascript is where 2020을 보고 난 후
+react에서는 함수형을 저렇게 사용하는데
+vue.js를 함수형으로 작업할 수 있을까?
+라는 생각이 들었습니다.
 
-### Compiles and minifies for production
-```
-npm run build
+강의에 나온 것처럼 간단한 예제로 작업하였습니다.
+QuantityInput 입니다.
 ```
 
-### Lints and fixes files
+## 순수함수
+
 ```
-npm run lint
+Vue에서는 반응 시스템으로 인한 설정때문에 평균적으로
+컴포넌트 오버헤드(순수 JavaScript 계산)가 발생합니다.
+하지만, 함수형 컴포넌트는 시스템 오버헤드 없이 사용하여
+앱 퍼포먼스를 향상 시킬 수 있습니다.
+
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Vue.js에서 함수형 컴포넌트를 사용해야 하는 이유
+
+```
+1. 입력 값이 같다면 출력 값도 같다.
+    - testFunction(1,2)와 testFunction(1,2)의 값은 똑같아야 한다.
+    - 출력에 영향을 주는 값이라면 입력으로만 받아야한다.
+2. 부수 작용이 없다.
+    - 함수 밖에 있는 것들에 대해 영향을 주지 않는다.
+3. 코드를 보면 예측이 가능하다.
+
+```
+
+### Original.vue
+
+```
+대부분의 Vue에서 간단하게 처리하는 방식입니다.
+```
+
+### VueHook.vue
+
+```
+react처럼 vue-hook library를 사용한 방식입니다.
+리액트처럼 render, 가벼운 state 관리를 할 수 있습니다.
+작업하면서 고민이 많았습니다.
+"함수형"이란 부수작용이 없게 만들어야 하는데..
+setState 때 react처럼 함수를 이용할 수 없더라구요.
+이래저래 고민을 하며 작업하였습니다. 😞
+```
+
+### Functional.vue
+
+```
+render 함수를 사용한 함수형 컴포넌트입니다.
+```
+
+### FunctionalVue.vue
+
+```
+단일 파일 컴포넌트입니다.
+단일 파일 컴포넌트로 작성된 컴포넌트는 읽기 쉬우며
+다른 컴포넌트와 같이 일관성을 유지 할 수 있습니다.
+functional 키워드로 render context 객체에 접근할 수 있습니다.
+```
+
+### conclude
+
+```
+잘 모르겠습니다. 
+함수형 프로그래밍을 하려고 시작했는데
+Vue.js에서는 자꾸 부수적인 작용을 하게 됩니다.
+ 
+```
+
+### later...
+
+```
+다음에 react를 사용하여 조금 더
+"함수형" 프로그래밍에 대해 맞게 작업하도록 하겠습니다.
+```

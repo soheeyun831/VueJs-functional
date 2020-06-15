@@ -1,0 +1,14 @@
+.container {
+  margin-top: 40px;
+  display: inline-flex;
+  align-items: center;
+  flex-direction: row;
+  .button-container {
+    width: 50px;
+    height: 100px;
+    display: flex;
+    margin-left: 10px;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
